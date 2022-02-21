@@ -1,0 +1,10 @@
+{% if user.is_authenticated %}
+<h2>Вы уже вошли</h2>
+{% else %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ next }}">
+    <input type="submit" value="Войти">
+</form>
+{% endif %}

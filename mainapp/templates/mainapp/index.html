@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="{% url 'main_app:index' %}">dawdawd</a>
+    <h1>{{ request.current_app }}</h1>
+    {% load my_tag %}
+    Main page
+
+    {% for tank in tanks %}
+    {{ tank.name }}
+    {% endfor %}
+    {% tanks 3 %}
+    <a href="{% url 'main_app:create_tank' %}">создать новый танк</a>
+<a href="{% url 'main_app:create_tank_2' %}">создать новый танк 2</a>
+<a href="{% url 'main_app:create_tank_properties' %}">создать ТТХ</a>
+<a href="{% url 'login' %}">Войти</a>
+<a href="{% url 'logout' %}">Выйти</a>
+</body>
+</html>

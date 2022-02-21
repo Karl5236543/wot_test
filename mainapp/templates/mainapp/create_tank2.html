@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form action="" method="post">
+    {% csrf_token %}
+      {% for error in errors.name %}
+      <p>
+        {{ error }}
+      </p>
+      {% endfor %}
+      <input type="text" name="name" value="{{tank.name}}">
+      {% for error in errors.lvl %}
+      <p>
+        {{ error }}
+      </p>
+      {% endfor %}
+      <input type="number" name="lvl" value="{{tank.lvl}}">
+      {% for error in errors.premium %}
+      <p>
+        {{ error }}
+      </p>
+      {% endfor %}
+      <input type="checkbox" name="premium">
+      <input type="submit">Создать</inpu>
+  </form>
+</body>
+</html>
